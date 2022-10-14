@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const weatherModelData = new Schema({
-  cityName: String,
-  weatherId: Number, 
+  city: String,
   temp: Number, 
   tempMax: Number,
   tempMin: Number, 

@@ -23,7 +23,7 @@ export const getWeatherData = async(req, res) => {
 export const saveWeatherInfo = async (req, res) => {
     console.log("receiving data from client");
    
-    const weatherInfo = { cityName: req.body.cityName, weatherId: req.body.weatherId, temp: req.body.temp, tempMax: req.body.tempMax, tempMin: req.body.tempMin, humidity: req.body.humidity, feels_like: req.body.feels_like };
+    const weatherInfo = { city: req.body.city, temp: req.body.temp, tempMax: req.body.tempMax, tempMin: req.body.tempMin, humidity: req.body.humidity, feels_like: req.body.feels_like };
     console.log(weatherInfo);
     try {
         const dbs = weatherModel.db;
