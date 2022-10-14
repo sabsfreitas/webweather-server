@@ -16,14 +16,14 @@ export const getWeatherData = async(req, res) => {
 
     } catch(error) {
         console.log("Error " + error);
-        res.status(404).json({error: error.message});
+        res.status(404).json({ error: error.message });
     }
 }
 
 export const saveWeatherInfo = async (req, res) => {
     console.log("receiving data from client");
    
-    const weatherInfo = { title: req.body.title, overview:req.body.overview };
+    const weatherInfo = { cityName: req.body.cityName, weatherId: req.body.weatherId, temp: req.body.temp, tempMax: req.body.tempMax, tempMin: req.body.tempMin, humidity: req.body.humidity, feels_like: req.body.feels_like };
     console.log(weatherInfo);
     try {
         const dbs = weatherModel.db;
