@@ -1,5 +1,5 @@
 const database = {
-    uri: 'mongodb+srv://sabrinarf2003:L6xSdb3TJmP47pRm@cluster0.qyiz9dv.mongodb.net/?retryWrites=true&w=majority'
+    uri: 'mongodb+srv://sabrinarf2003:5l1XD9NC8gNXRt7c@cluster0.di8zm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 }
 
 export default database;
