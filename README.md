@@ -6,9 +6,10 @@ Tecnologias utilizadas:
 
 - Node.js
 - Express.js
-- CORS
+- Cors
 - Mongoose
 - MongoDB
+- Dotenv
 - OpenWeatherMap API
 
 Rotas
