@@ -12,7 +12,7 @@ app.use(express.json());
 app.use("/weather", weatherRoutes);
 
 app.get("/health", (req, res) => {
-    res.json({ status: "OK", message: "Server is running" });
+    res.status(200).json({ status: "OK", message: "Server is running" });
 });
 
 app.listen(5000, () => console.log('Server listening on port 5000'));

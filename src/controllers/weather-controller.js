@@ -1,40 +1,38 @@
-import  { weatherModel }  from '../models/Weather.js';
-import { ObjectId } from 'mongodb';
+import Weather from '../models/Weather.js';
 
-export const getWeatherData = async(req, res) => {
-    console.log("sending data to client");
-    let rest = null;
+export const getWeatherData = async (req, res) => {
+    console.log("Sending data to client...");
+    
     try {
-        const dbs = weatherModel.db;
-        const coll = dbs.collection("weathers");
-
-        let rest = await coll.find({}).toArray();
-        res.json(rest);
-
-        console.log("data sent");
-        
-
-    } catch(error) {
-        console.log("Error " + error);
-        res.status(404).json({ error: error.message });
+        const data = await Weather.find({});
+        res.json(data);
+        console.log("Data sent.");
+    } catch (error) {
+        console.error("Error: ", error);
+        res.status(500).json({ error: error.message });
     }
-}
+};
 
 export const saveWeatherInfo = async (req, res) => {
-    console.log("receiving data from client");
-   
-    const weatherInfo = { city: req.body.city, temp: req.body.temp, tempMax: req.body.tempMax, tempMin: req.body.tempMin, humidity: req.body.humidity, feels_like: req.body.feels_like };
-    console.log(weatherInfo);
+    console.log("Receiving data from client...");
+    console.log(req.body);
+
     try {
-        const dbs = weatherModel.db;
-        const coll = dbs.collection("weathers");
+        const weatherInfo = new Weather({
+            city: req.body.city,
+            temp: req.body.temp,
+            tempMax: req.body.tempMax,
+            tempMin: req.body.tempMin,
+            humidity: req.body.humidity,
+            feels_like: req.body.feels_like
+        });
 
-        const rest = await coll.insertOne(weatherInfo);
-        console.log("data saved");
-        res.status(200).json({ message_success: "Data saved successfully" });
+        await weatherInfo.save();
+        console.log("Data saved.", weatherInfo);
+        res.status(201).json({ message: "Data saved successfully" });
 
-    } catch(ex) {
-        console.log("Error " + ex);
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: error.message });
     }
-   
-}
+};

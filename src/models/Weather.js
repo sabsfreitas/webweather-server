@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
+
 const { Schema } = mongoose;
 
-const weatherModelData = new Schema({
+const weatherSchema = new Schema({
   city: String,
   temp: Number, 
   tempMax: Number,
@@ -10,4 +11,6 @@ const weatherModelData = new Schema({
   feels_like: Number
 });
 
-export const weatherModel = mongoose.model("weathers", weatherModelData);
+const Weather = mongoose.model("Weather", weatherSchema);
+
+export default Weather;
