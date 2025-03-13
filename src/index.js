@@ -4,9 +4,8 @@ import cors from "cors";
 import database from "./config/database.js";
 import mongoose from "mongoose";
 
-
 const app = express();
-mongoose.connect(database.uri, { useNewUrlParser: true });
+mongoose.connect(database.uri);
 
 app.use(cors());
 app.use(express.json());
