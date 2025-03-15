@@ -16,8 +16,8 @@ API REST que consome dados meteorológicos da **OpenWeatherMap API** através de
 
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/seu-usuario/webweather-backend.git
-   cd webweather-backend
+   git clone https://github.com/sabsfreitas/webweather-server.git
+   cd webweather-server
    ```
 
 2. Instale as dependências:  
