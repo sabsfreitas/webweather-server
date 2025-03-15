@@ -1,22 +1,58 @@
-# Backend do WebWeather APP.
+# 🌦 Backend do WebWeather App  
 
-API REST que consome dados meteorológioos da OpenWeatherMap API através de uma key e armazena os dados no MongoDB.
+API REST que consome dados meteorológicos da **OpenWeatherMap API** através de uma chave de acesso e armazena as informações no **MongoDB**.  
 
-Tecnologias utilizadas:
+## 🚀 Tecnologias Utilizadas  
 
-- Node.js
-- Express.js
-- Cors
-- Mongoose
-- MongoDB
-- Dotenv
-- OpenWeatherMap API
+- **Node.js**  
+- **Express.js**  
+- **Cors**  
+- **Mongoose**  
+- **MongoDB**  
+- **Dotenv**  
+- **OpenWeatherMap API**  
 
-Rotas
+## 🛠 Configuração  
 
-GET /health - Verificação de saúde do servidor
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/seu-usuario/webweather-backend.git
+   cd webweather-backend
+   ```
 
-GET /weather - Retorna os dados meteorológicos armazenados.
+2. Instale as dependências:  
+   ```bash
+   npm install
+   ```
 
-POST /weather - Envia dados meteorológicos para serem armazenados.
+3. Crie um arquivo `.env` e adicione suas credenciais:  
+   ```env
+   MONGO_URI=sua_conexao_mongodb
+   OPENWEATHER_API_KEY=sua_chave_api
+   PORT=5000
+   ```
 
+4. Inicie o servidor:  
+   ```bash
+   npm start
+   ```
+
+## 🔗 Rotas  
+
+### 🛠 Verificação de saúde  
+```http
+GET /health
+```
+Verifica o status do servidor.  
+
+### 🌤 Obter dados meteorológicos  
+```http
+GET /weather
+```
+Retorna os dados meteorológicos armazenados.  
+
+### 📥 Armazenar dados meteorológicos  
+```http
+POST /weather
+```
+Envia dados meteorológicos para serem armazenados no banco de dados.  
