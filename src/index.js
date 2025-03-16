@@ -16,4 +16,4 @@ app.get("/health", (req, res) => {
     res.status(200).json({ status: "OK", message: "Server is running" });
 });
 
-app.listen(process.env.PORT, () => console.log('Server listening on port 5000'));
+app.listen(process.env.PORT, () => console.log('Server listening on port ' + process.env.PORT));
