@@ -28,7 +28,6 @@ API REST que consome dados meteorológicos da **OpenWeatherMap API** através de
 3. Crie um arquivo `.env` e adicione suas credenciais:  
    ```env
    MONGO_URI=sua_conexao_mongodb
-   OPENWEATHER_API_KEY=sua_chave_api
    PORT=5000
    ```
 
